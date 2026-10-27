@@ -1,0 +1,19 @@
+[project]
+name = "ipod-lyrics"
+version = "0.1.0"
+description = "Fetch lyrics from LRCLIB and write them into audio tags for iPod"
+requires-python = ">=3.9"
+dependencies = [
+    "mutagen>=1.47",
+    "requests>=2.31",
+]
+
+[project.scripts]
+ipod-lyrics = "lyrics:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["lyrics"]
