@@ -2,11 +2,11 @@
 """Fetch lyrics from LRCLIB and write them into audio tags after manual approval.
 
 Usage:
-  ./fetch_lyrics.py                         # whole library (current dir)
-  ./fetch_lyrics.py FLACs/Justice           # one folder
-  ./fetch_lyrics.py "FLACs/Justice/Woman/10. Justice - Close Call.flac"
-  ./fetch_lyrics.py -a                      # auto-write exact matches, ask about the rest
-  ./fetch_lyrics.py --fix-tags              # repair tags for iPod: ID3v2.3 for MP3, LF lyrics
+  ./lyrics.py                         # whole library (current dir)
+  ./lyrics.py FLACs/Justice           # one folder
+  ./lyrics.py "FLACs/Justice/Woman/10. Justice - Close Call.flac"
+  ./lyrics.py -a                      # auto-write exact matches, ask about the rest
+  ./lyrics.py --fix-tags              # repair tags for iPod: ID3v2.3 for MP3, LF lyrics
 
 Requires: mutagen, requests (both already installed).
 """
@@ -28,7 +28,7 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 API = "https://lrclib.net/api"
-UA = "fetch_lyrics.py/0.1 (personal library tagger)"
+UA = "lyrics.py/0.1 (personal library tagger)"
 AUDIO_EXTS = {".mp3", ".m4a", ".flac"}
 PREVIEW_LINES = 12
 # Rejected / not-found songs are remembered here so a re-run of the whole
